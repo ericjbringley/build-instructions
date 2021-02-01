@@ -153,6 +153,9 @@ esac
 
 #------------------------------------------------------------------------------
 
+
+export WM_PROJECT_INST_DIR=$FOAM_INST_DIR/$USER-$WM_PROJECT_VERSION
+export WM_PROJECT_USER_DIR=$WM_PROJECT_INST_DIR
 # Location of the jobControl directory
 export FOAM_JOB_DIR=$WM_PROJECT_INST_DIR/jobControl
 

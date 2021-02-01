@@ -30,3 +30,10 @@ file="${FOAM_THIRDPARTY}/etc/wmakeFiles/scotch/Makefile.inc.i686_pc_linux2.shlib
 
 sed -i "s/gcc/\$(WM_CC)/"    ${file}
 sed -i "s/mpicc/\$(WM_CC)/"  ${file}
+
+# Patch wmake scripts to avoid writing lockfiles on
+# the /home/ directory (problematic for compiling on
+# work nodes)
+wmake="wmake/wmake"
+cp -r ${FOAM_INST_DIR}/site/$wmake ${FOAM_SRC}/$wmake
+
